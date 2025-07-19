@@ -1,2 +1,2 @@
 export * from './telegram.config'
-export * from './i18n.config'
+export * from './translate.config'

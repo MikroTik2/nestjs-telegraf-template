@@ -27,14 +27,14 @@ export class ExtraService {
 	// Избавляемся от спана сообщений, путем изменения прощлого текстового сообщения
 	public async replyOrEdit(ctx: IContext, lang: Langs, options: IReplyOrEditOptions) {
 		const { reply_markup } = options
-		const phrase = this.translateService.findPhrase(options.text, options.args)
+		const phrase = this.translateService.findPhrase(options.text, lang, options.args)
 
 		try {
 			return (await ctx.editMessageText(phrase, {
 				reply_markup,
 				parse_mode: 'HTML'
 			})) as Message.TextMessage
-		} catch {
+		} catch (e) {
 			return (await ctx.sendMessage(phrase, { reply_markup, parse_mode: 'HTML' }))
 		}
 	}
@@ -43,12 +43,12 @@ export class ExtraService {
 		const { reply_markup } = options
 		const phrase = this.translateService.findPhrase(options.text, options.args)
 
-		return (await ctx.sendPhoto(Input.fromURLStream(options.image), {
+		return await ctx.sendPhoto(Input.fromURLStream(options.image), {
 			caption: phrase,
 			reply_markup,
 			parse_mode: 'HTML',
 			...reply_markup
-		}))
+		})
 	}
 
 	// Вывод уведомления на экран клиента

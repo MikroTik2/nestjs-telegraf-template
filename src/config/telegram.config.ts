@@ -1,9 +1,11 @@
 import { ConfigService } from '@nestjs/config'
 import { TelegrafModuleAsyncOptions, TelegrafModuleOptions } from 'nestjs-telegraf'
+import { session } from 'telegraf'
 
 const telegrafModuleOptions = (config: ConfigService): TelegrafModuleOptions => {
 	return {
-		token: config.getOrThrow('TELEGRAM_BOT_TOKEN')
+		token: config.getOrThrow('TELEGRAM_BOT_TOKEN'),
+		middlewares: [session()]
 	}
 }
 

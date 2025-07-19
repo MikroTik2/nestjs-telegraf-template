@@ -9,12 +9,12 @@ export class SessionService {
 		this.resetImage(ctx).resetPropsOnCreate(ctx)
 	}
 
-	public setLastMessageId({ session }: IContext, msg: Message): this {
+	public setLastMessageId({ session }: IContext, msg: Message) {
 		session.messageId = msg.message_id
 		return this
 	}
 
-	public setImage({ session }: IContext, url: URL): this {
+	public setImage({ session }: IContext, url: URL) {
 		session.image = url.toString()
 		return this
 	}

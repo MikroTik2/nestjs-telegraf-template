@@ -25,7 +25,8 @@ export class TranslateService {
 	 * const phrase = this.translate.findPhrase('buttons.hello', 'en', { username: ctx.from.username });
 	 * */
 	public findPhrase(phrase: I18nPath, lang: Langs = 'en', args?: any): string {
-		return this.locales.translate<I18nPath>(phrase, { lang, args }).toString()
+		const resolvedLang = typeof lang === 'string' ? lang : 'en'
+		return this.locales.translate<I18nPath>(phrase, { lang: resolvedLang, args }).toString()
 	}
 
 	public findPhrases(lang: Langs = 'en', ...phrases: IPhrase[]) {
