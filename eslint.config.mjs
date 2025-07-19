@@ -27,9 +27,10 @@ export default tseslint.config(
   {
     rules: {
       '@typescript-eslint/interface-name-prefix': 'off',
-      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/prefer-nullish-coalescing': 'off',
       '@typescript-eslint/no-unsafe-argument': 'off',
+      '@typescript-eslint/no-empty-object-type': 'off',
 
       '@typescript-eslint/no-misused-new': 'error',
       '@typescript-eslint/no-non-null-assertion': 'error',
