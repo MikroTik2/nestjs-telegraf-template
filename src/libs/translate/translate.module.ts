@@ -4,6 +4,8 @@ import { AcceptLanguageResolver, I18nJsonLoader, I18nModule, QueryResolver } fro
 
 import { getI18nConfig } from '@/config'
 
+import { TranslateService } from './translate.service'
+
 @Module({
 	imports: [
 		I18nModule.forRootAsync({
@@ -13,7 +15,7 @@ import { getI18nConfig } from '@/config'
 			resolvers: [{ use: QueryResolver, options: ['lang'] }, AcceptLanguageResolver]
 		})
 	],
-	providers: [],
-	exports: []
+	providers: [TranslateService],
+	exports: [TranslateService]
 })
 export class TranslateModule {}
