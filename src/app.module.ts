@@ -10,9 +10,10 @@ import { InfoModule } from '@/greeter/scenes/info/info.module'
 import { InfraModule } from '@/infra/infra.module'
 import { SessionService } from '@/libs/session/session.service'
 
-@Module({
-	imports: [ConfigModule.forRoot({ isGlobal: true }), TelegrafModule.forRootAsync(getTelegramConfig()), InfraModule, GreeterModule, HomeModule, InfoModule],
+import { LanguageModule } from './greeter/scenes/language/language.module'
 
+@Module({
+	imports: [ConfigModule.forRoot({ isGlobal: true }), TelegrafModule.forRootAsync(getTelegramConfig()), InfraModule, GreeterModule, HomeModule, InfoModule, LanguageModule],
 	providers: [GreeterUpdate, SessionService]
 })
 export class AppModule {}
