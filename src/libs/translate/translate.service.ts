@@ -24,11 +24,11 @@ export class TranslateService {
 	 * // Вернет приветствие из папки 'en' - 'Hello, mikrodick!'
 	 * const phrase = this.translate.findPhrase('buttons.hello', 'en', { username: ctx.from.username });
 	 * */
-	findPhrase(phrase: I18nPath, lang: Langs = 'en', args?: any): string {
+	public findPhrase(phrase: I18nPath, lang: Langs = 'en', args?: any): string {
 		return this.locales.translate<I18nPath>(phrase, { lang, args }).toString()
 	}
 
-	findPhrases(lang: Langs = 'en', ...phrases: IPhrase[]) {
+	public findPhrases(lang: Langs = 'en', ...phrases: IPhrase[]) {
 		return phrases.reduce((acc, item) => {
 			const translated = this.findPhrase(item.phrase, lang, item.args)
 			acc.push(translated)
