@@ -6,11 +6,12 @@ import { getTelegramConfig } from '@/config'
 import { GreeterModule } from '@/greeter/greeter.module'
 import { GreeterUpdate } from '@/greeter/greeter.update'
 import { HomeModule } from '@/greeter/scenes/home/home.module'
+import { InfoModule } from '@/greeter/scenes/info/info.module'
 import { InfraModule } from '@/infra/infra.module'
 import { SessionService } from '@/libs/session/session.service'
 
 @Module({
-	imports: [ConfigModule.forRoot({ isGlobal: true }), TelegrafModule.forRootAsync(getTelegramConfig()), InfraModule, GreeterModule, HomeModule],
+	imports: [ConfigModule.forRoot({ isGlobal: true }), TelegrafModule.forRootAsync(getTelegramConfig()), InfraModule, GreeterModule, HomeModule, InfoModule],
 
 	providers: [GreeterUpdate, SessionService]
 })
