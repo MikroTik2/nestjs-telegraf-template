@@ -35,7 +35,7 @@ export class ExtraService {
 				parse_mode: 'HTML'
 			})) as Message.TextMessage
 		} catch (e) {
-			return (await ctx.sendMessage(phrase, { reply_markup, parse_mode: 'HTML' }))
+			return await ctx.sendMessage(phrase, { reply_markup, parse_mode: 'HTML' })
 		}
 	}
 
@@ -53,7 +53,7 @@ export class ExtraService {
 
 	// Вывод уведомления на экран клиента
 	public async replyAlert(ctx: IContext, lang: Langs, { text, args }: IReplyAlertOptions): Promise<void> {
-		const translatedText = this.translateService.findPhrase(text, args)
+		const translatedText = this.translateService.findPhrase(text, lang, args)
 		await ctx.answerCbQuery(translatedText)
 	}
 

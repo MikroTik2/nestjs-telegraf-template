@@ -25,6 +25,8 @@ export class LanguageScene {
 		const langFromCallback: Langs = ctx.callbackQuery.data.split('.')[1] as Langs
 		const langFromSession: Langs = ctx.session.lang
 
+		console.log(langFromSession)
+
 		if (ctx.session.lang === langFromCallback) {
 			await this.extraService.replyAlert(ctx, langFromSession, {
 				text: 'alerts.language_already_exists',
