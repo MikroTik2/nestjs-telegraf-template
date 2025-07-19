@@ -7,8 +7,7 @@ import { IContext } from '@/common/interfaces'
 export class GreeterUpdate {
 	@Start()
 	public async start(ctx: IContext) {
-		// this.sessionService.resetBotSession(ctx)
-		Logger.verbose('Start command received', GreeterUpdate.name)
+		Logger.verbose(ctx.session, `🟡 Session started`)
 
 		await ctx.scene.enter('scenes.home')
 	}
