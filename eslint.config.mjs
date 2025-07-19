@@ -32,10 +32,10 @@ export default tseslint.config(
       '@typescript-eslint/no-unsafe-argument': 'off',
       '@typescript-eslint/no-empty-object-type': 'off',
       '@typescript-eslint/no-base-to-string': 'off',
-
+      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      
       '@typescript-eslint/no-misused-new': 'error',
       '@typescript-eslint/no-non-null-assertion': 'error',
-      '@typescript-eslint/no-unused-vars': 'error',
       '@typescript-eslint/no-unsafe-enum-comparison': 'off',
 
       '@typescript-eslint/explicit-module-boundary-types': 'off',

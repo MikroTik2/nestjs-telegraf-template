@@ -10,7 +10,7 @@ import { Langs } from '@/common/types'
  * */
 @Injectable()
 export class TranslateService {
-	constructor(private readonly locales: I18nService<I18nTranslations>) {}
+	public constructor(private readonly locales: I18nService<I18nTranslations>) {}
 
 	/** Сервис по поиску перевода
 	 *  @param phrase ключ перевода
