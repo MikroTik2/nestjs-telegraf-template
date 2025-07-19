@@ -7,14 +7,6 @@ import { GreeterModule } from '@/greeter/greeter.module'
 import { InfraModule } from '@/infra/infra.module'
 
 @Module({
-	imports: [
-		ConfigModule.forRoot({
-			isGlobal: true
-		}),
-		TelegrafModule.forRootAsync(options()),
-
-		InfraModule,
-		GreeterModule
-	]
+	imports: [ConfigModule.forRoot({ isGlobal: true }), TelegrafModule.forRootAsync(options()), InfraModule, GreeterModule]
 })
 export class AppModule {}
