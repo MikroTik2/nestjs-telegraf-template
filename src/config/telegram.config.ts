@@ -7,7 +7,7 @@ const telegrafModuleOptions = (config: ConfigService): TelegrafModuleOptions => 
 	}
 }
 
-export const options = (): TelegrafModuleAsyncOptions => {
+export const getTelegramConfig = (): TelegrafModuleAsyncOptions => {
 	return {
 		botName: 'greeter_bot',
 		inject: [ConfigService],
