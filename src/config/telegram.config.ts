@@ -3,12 +3,13 @@ import { TelegrafModuleAsyncOptions, TelegrafModuleOptions } from 'nestjs-telegr
 
 const telegrafModuleOptions = (config: ConfigService): TelegrafModuleOptions => {
 	return {
-		token: config.get('TELEGRAM_BOT_TOKEN')
+		token: config.getOrThrow('TELEGRAM_BOT_TOKEN')
 	}
 }
 
 export const options = (): TelegrafModuleAsyncOptions => {
 	return {
+		botName: 'greeter_bot',
 		inject: [ConfigService],
 		useFactory: (config: ConfigService) => telegrafModuleOptions(config)
 	}
