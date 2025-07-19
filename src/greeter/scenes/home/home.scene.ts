@@ -16,7 +16,7 @@ export class HomeScene {
 		await extraService.replyOrEdit(ctx, lang, {
 			text: 'phrases.home',
 			args: { username: `<b>${ctx.from.username}</b>` },
-			...extraService.typedInlineKeyboard([['buttons.faq', 'buttons.change_language']], lang)
+			...extraService.typedInlineKeyboard([['buttons.faq', 'buttons.language']], lang)
 		})
 	}
 
@@ -30,7 +30,7 @@ export class HomeScene {
 		await ctx.scene.enter('scenes.faq')
 	}
 
-	@ActionDecorator('buttons.change_language')
+	@ActionDecorator('buttons.language')
 	public async changeLanguage(ctx: IContext) {
 		await ctx.scene.enter('scenes.language')
 	}

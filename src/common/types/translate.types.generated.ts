@@ -11,7 +11,7 @@ export type I18nTranslations = {
     };
     "buttons": {
         "back": string;
-        "change_language": string;
+        "language": string;
         "faq": string;
         "name": string;
         "accept": string;
@@ -26,7 +26,7 @@ export type I18nTranslations = {
     };
     "phrases": {
         "home": string;
-        "change_language": string;
+        "language": string;
         "faq": string;
         "admin": string;
         "error": string;
