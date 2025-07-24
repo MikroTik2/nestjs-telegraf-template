@@ -2,6 +2,8 @@
 	"home": "🔥 Sap, {username}. It's me Artur, here you can buy any product for your desire",
 	"language": "📚 Choose your preferred language",
 	"faq": "🔍 Frequently asked questions",
+	"feedback": "Please leave a review:",
+	"feedback_success": "Thank you for your feedback: {feedback}",
 	"admin": "Admin panel",
 	"error": "Woops, i don't understand your request",
 	"if_you_want_image": "If you want to attach a picture, just send it to me",

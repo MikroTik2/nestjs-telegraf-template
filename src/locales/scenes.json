@@ -4,5 +4,8 @@
 		"faq": "faq",
 		"admin": "admin",
 		"language": "language"
+	},
+	"wizard": {
+		"feedback": "feedback"
 	}
 }

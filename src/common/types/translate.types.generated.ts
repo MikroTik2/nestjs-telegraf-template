@@ -13,6 +13,7 @@ export type I18nTranslations = {
         "back": string;
         "language": string;
         "faq": string;
+        "feedback": string;
         "name": string;
         "accept": string;
         "cancel": string;
@@ -28,6 +29,8 @@ export type I18nTranslations = {
         "home": string;
         "language": string;
         "faq": string;
+        "feedback": string;
+        "feedback_success": string;
         "admin": string;
         "error": string;
         "if_you_want_image": string;
@@ -55,6 +58,9 @@ export type I18nTranslations = {
         "faq": string;
         "admin": string;
         "language": string;
+    };
+    "wizard": {
+        "feedback": string;
     };
 };
 /* prettier-ignore */

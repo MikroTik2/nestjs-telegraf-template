@@ -5,13 +5,14 @@ import { TelegrafModule } from 'nestjs-telegraf'
 import { getTelegramConfig } from '@/config'
 import { GreeterModule } from '@/greeter/greeter.module'
 import { GreeterUpdate } from '@/greeter/greeter.update'
+import { AdminModule } from '@/greeter/scenes/admin/admin.module'
 import { HomeModule } from '@/greeter/scenes/home/home.module'
 import { InfoModule } from '@/greeter/scenes/info/info.module'
+import { LanguageModule } from '@/greeter/scenes/language/language.module'
 import { InfraModule } from '@/infra/infra.module'
 import { SessionService } from '@/libs/session/session.service'
 
-import { AdminModule } from './greeter/scenes/admin/admin.module'
-import { LanguageModule } from './greeter/scenes/language/language.module'
+import { FeedbackModule } from './greeter/wizard/feedback/feedback.module'
 
 @Module({
 	imports: [
@@ -21,6 +22,7 @@ import { LanguageModule } from './greeter/scenes/language/language.module'
 		GreeterModule,
 		HomeModule,
 		InfoModule,
+		FeedbackModule,
 		LanguageModule,
 		AdminModule
 	],
